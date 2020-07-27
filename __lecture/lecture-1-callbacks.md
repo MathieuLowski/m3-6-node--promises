@@ -8,11 +8,11 @@
 
 _Synchronous_: Things happens one at a time.
 
----
+--- Things hapens one at a time
 
 _Asynchronous_: Multiple things happen at the same time.
 
----
+--- Multiple things can happen at the same time
 
 ### Example
 
@@ -27,6 +27,7 @@ An app that fetches 2 resources from the network, and then combines the results 
 ### Important Distinction
 
 In a _synchronous_ model, waiting for actions to finish is **implicit**, but in an _asynchronous_ model, it is **explicit**.
+Asynch gives you an explicit controle over the app
 
 ---
 
@@ -45,6 +46,7 @@ _Examples of operations that might take time?_
 ## Callbacks
 
 What is a callback?
+///It is a function that gets fired inside another function.
 
 ---
 
@@ -55,9 +57,9 @@ What is a callback?
 ---
 
 ```js
-console.log('do first thing');
-console.log('do second thing');
-console.log('do third thing');
+console.log("do first thing");
+console.log("do second thing");
+console.log("do third thing");
 
 // expected output
 ```
@@ -71,14 +73,14 @@ What happens if the second thing takes longer than expected?
 ---
 
 ```js
-console.log('do first thing');
+console.log("do first thing");
 setTimeout(() => {
-  console.log('do second thing');
+  console.log("do second thing");
 }, 2000);
-console.log('do third thing');
+console.log("do third thing");
 ```
 
----
+## We use callbacks to prevent JS reading functions in the wrogn order.
 
 ### Important
 
@@ -94,7 +96,7 @@ const writeStory = (topic) => {
   alert(`Begin writing a story about ${topic}`);
 };
 
-writeStory('traveling to Mars');
+writeStory("traveling to Mars");
 ```
 
 ---
@@ -105,8 +107,8 @@ const writeStory = (topic, callback) => {
   callback();
 };
 
-writeStory('traveling to Mars', function () {
-  alert('Done! Time to submit it.');
+writeStory("traveling to Mars", function () {
+  alert("Done! Time to submit it.");
 });
 ```
 
